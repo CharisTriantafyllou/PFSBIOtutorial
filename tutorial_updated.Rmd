@@ -1,0 +1,69 @@
+---
+title: "Single cell RNA-seq tutorial"
+author: "Charisios Triantafyllou"
+date: "Friday 28/04/2023"
+output:
+  html_document:
+    toc: yes
+    df_print: paged
+  unilur::tutorial_html:
+    toc: yes
+    toc_float: yes
+    theme: default
+    number_sections: yes
+  unilur::tutorial_pdf:
+    number_sections: yes
+  unilur::tutorial_pdf_solution:
+    number_sections: yes
+  unilur::tutorial_html_solution:
+    toc: yes
+    toc_float: yes
+    solution_suffix: ''
+    theme: default
+    number_sections: yes
+urlcolor: blue
+---
+
+```{r setup, include=FALSE,purl=FALSE}
+knitr::opts_template$set(solution = list(box.title = "Answer",
+                                         box.body = list(fill = "white"),
+                                         box.collapse = FALSE))
+knitr::opts_chunk$set(echo=TRUE,comment="#",fig.path='Figures/Figure-',fig.align='center',fig.width=8,fig.height=8,out.width="65%",fig.show="hold")
+
+r <- getOption("repos")
+r["CRAN"] <- "https://cloud.r-project.org/"
+options(repos = r)
+```
+
+# Intro
+
+This tutorial is focused on the analysis of single-cell RNA-seq data using the R environment and Bioconductor software. The aim of this material is to introduce the student to some of the most representative methods and corresponding tasks of state-of-the-art transcriptomic analysis.
+
+- Quality control and filtering 
+- Normalization and feature selection
+- Dimensionality reduction and visualization
+- Clustering
+- Cell annotation
+- Differential Expression
+- Trajectory Analysis
+
+# Preparations
+
+In this step we set up the environment including data and required libraries. 
+
+## Load Packages
+
+We load the required libraries to make use of the functions and methods they include.
+
+```{r load_packages,warning=FALSE,message=FALSE}
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+library(alluvial)
+library(bioDist)
+```
+
+## Download data
+
+
+
